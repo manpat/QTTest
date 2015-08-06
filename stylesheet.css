@@ -1,0 +1,59 @@
+* {
+	border: none;
+	background-color: #222;
+	color: #aaa;
+	show-decoration-selected: 0;
+}
+
+QPushButton {
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, 
+		stop: 0 #222, stop: 0.9 #222, stop: 0.91 #a22);
+
+	padding: 7px 20px;
+	margin: 1px;
+}
+
+QPushButton:hover {
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, 
+		stop: 0 #222, stop: 0.9 #222, stop: 0.91 #a44);
+}
+QPushButton:pressed {
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, 
+		stop: 0 #222, stop: 0.8 #222, stop: 0.81 #a44);
+}
+
+QTabWidget::pane {
+	border-top: 1px solid #444;
+}
+
+QTabBar {
+	icon-size: 30px;
+}
+QTabBar::tab {
+	padding: 8px 20px;
+	background-color: #222;
+}
+
+QTabBar::tab:!selected {
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, 
+		stop: 0 #222, stop: 0.949999 #222, stop: 0.95 #444)
+}
+QTabBar::tab:hover {
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+		stop: 0 #222, stop: 0.899 #222, stop: 0.9 #454545)
+}
+QTabBar::tab:selected {
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+		stop: 0 #222, stop: 0.9 #222, stop: 0.91 #555)
+}
+
+QSlider::groove {
+	background-color: black;
+}
+QSlider::handle {
+	background-color: white;
+	min-height: 50px;
+}
+QSlider::add-page {
+	background-color: white;
+}
