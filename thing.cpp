@@ -62,7 +62,7 @@ Thing::Thing(QWidget* parent) : QTabWidget(parent) {
 	dialbox->addWidget(dial2);
 	dialbox->addWidget(dial3);
 
-	auto sl1 = new CustomSlider(this);
+	sl1 = new CustomSlider(this);
 	auto sl2 = new CustomSlider(this);
 	auto sl3 = new CustomSlider(this);
 	auto sl4 = new CustomSlider(this);
@@ -115,17 +115,21 @@ Thing::Thing(QWidget* parent) : QTabWidget(parent) {
 	connect(butt2, SIGNAL(clicked()), this, SLOT(Blah2()));
 	connect(quitb, SIGNAL(clicked()), qApp, SLOT(quit()));
 
-	connect(dial1, SIGNAL(dialMoved(int)), this, SLOT(DialMoved(int)));
-	connect(dial2, SIGNAL(dialMoved(int)), this, SLOT(DialMoved(int)));
+	connect(sl1, SIGNAL(valueChanged(int)), this, SLOT(DialMoved(int)));
 }
 
 void Thing::Blah1(){
-	// std::cout << "Blah1" << std::endl;
+	std::cout << "Blah1" << std::endl;
 }
 void Thing::Blah2(){
-	// std::cout << "Blah2" << std::endl;
+	std::cout << "Blah2" << std::endl;
+}
+
+static int pto255(int v){
+	return v*255/100;
 }
 
 void Thing::DialMoved(int v){
 	// std::cout << "DialMoved " << v << std::endl;
+	sl1->setColor(QColor::fromHsl(v*359/100, pto255(70), pto255(60)));
 }
